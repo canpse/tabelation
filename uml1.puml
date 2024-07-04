@@ -1,0 +1,19 @@
+@startuml
+interface tabelation.generators.DBGenerator
+class tabelation.generators.DBGeneratorMySql
+class tabelation.components.ComponentFactory
+class tabelation.components.Field
+class tabelation.components.Schema
+class tabelation.components.Table
+enum tabelation.types.AbstractType
+tabelation.generators.DBGeneratorMySql --|> tabelation.generators.DBGenerator
+tabelation.components.ComponentFactory ..> tabelation.types.AbstractType
+tabelation.components.Field ..> tabelation.types.AbstractType
+tabelation.components.Table ..> tabelation.types.AbstractType
+tabelation.components.Table ..> tabelation.components.Field
+tabelation.components.Schema ..> tabelation.components.Table
+tabelation.generators.DBGeneratorMySql ..> tabelation.components.Field
+tabelation.generators.DBGeneratorMySql ..> tabelation.components.Schema
+tabelation.generators.DBGeneratorMySql ..> tabelation.components.Table
+tabelation.generators.DBGenerator ..> tabelation.components.Schema
+@enduml

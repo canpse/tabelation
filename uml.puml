@@ -1,0 +1,25 @@
+@startuml
+annotation java.lang.Override
+class java.sql.Connection
+class lucas.tabelation.Tabelation
+class lucas.tabelation.components.ComponentFactory
+class lucas.tabelation.components.Schema
+class lucas.tabelation.components.Table
+class lucas.tabelation.components.Field
+class lucas.tabelation.DBGeneratorMySql
+enum lucas.tabelation.types.AbstractType
+interface lucas.tabelation.DBGenerator
+lucas.tabelation.DBGeneratorMySql ..> java.sql.Connection
+lucas.tabelation.DBGeneratorMySql ..> lucas.tabelation.components.Field
+lucas.tabelation.DBGeneratorMySql ..> lucas.tabelation.components.Schema
+lucas.tabelation.DBGeneratorMySql ..> lucas.tabelation.components.Table
+lucas.tabelation.DBGeneratorMySql --|> lucas.tabelation.DBGenerator
+lucas.tabelation.Tabelation ..> lucas.tabelation.components.Field
+lucas.tabelation.Tabelation ..> lucas.tabelation.components.Schema
+lucas.tabelation.Tabelation ..> lucas.tabelation.components.Table
+lucas.tabelation.Tabelation ..> lucas.tabelation.types.AbstractType
+lucas.tabelation.components.ComponentFactory ..> lucas.tabelation.types.AbstractType
+lucas.tabelation.components.Field ..> lucas.tabelation.types.AbstractType
+lucas.tabelation.components.Table ..> lucas.tabelation.types.AbstractType
+lucas.tabelation.DBGenerator ..> lucas.tabelation.components.Schema
+@enduml
